@@ -1,14 +1,21 @@
 SimpleCms::Application.routes.draw do
  
-  #get "demo/index"
+
+
+  
+  
+  
   #get "demo/myname"
 
+ 
+
 # a sample dafault route
+
 
 root "demo#index"
 match ':controller(/:action(/:id))', :via => [:get, :post]
 
-#resources :demo
+#resources :pages
 
   
   # the above two routes are the examples of simple or match routes.
