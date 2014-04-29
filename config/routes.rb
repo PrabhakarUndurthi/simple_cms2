@@ -1,17 +1,8 @@
 SimpleCms::Application.routes.draw do
  
-
-
-  
-  
-  
   #get "demo/myname"
 
- 
-
 # a sample dafault route
-
-
 root "demo#index"
 match ':controller(/:action(/:id))', :via => [:get, :post]
 
