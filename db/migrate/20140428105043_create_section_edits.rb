@@ -5,6 +5,7 @@ class CreateSectionEdits < ActiveRecord::Migration
     	t.references :section
     	t.string :summery
 
+
       t.timestamps
     end
     add_index :section_edits, ["admin_user_id", "section_id"]
