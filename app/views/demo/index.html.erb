@@ -8,5 +8,10 @@
 
 <%= link_to("Rails Way of Link", {:action => "hello", :page =>5, :id => 3}) %>
 <br/>
+<%= name= "Mark" %>
+
+<%= link_to('Roar', '#', :onclick => "jsRoar('#{name}'); return true;") %>
+<%= javascript_tag("jsRoar('#{name}');") %>
+
 
 
