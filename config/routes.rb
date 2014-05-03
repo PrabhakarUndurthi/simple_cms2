@@ -1,5 +1,6 @@
 SimpleCms::Application.routes.draw do
  
+  
   get "access/index"
   
   #get "demo/myname"
