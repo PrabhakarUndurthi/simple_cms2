@@ -1,6 +1,10 @@
 SimpleCms::Application.routes.draw do
  
+  get "access/index"
+  
   #get "demo/myname"
+
+  get 'admin', :to => "access#index"
 
 # a sample dafault route
 root "demo#index"

@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428105043) do
+ActiveRecord::Schema.define(version: 20140503121706) do
 
   create_table "admin_users", force: true do |t|
     t.string   "first_name",      limit: 25
     t.string   "last_name",       limit: 50
     t.string   "email",           limit: 100, default: "", null: false
     t.string   "username",        limit: 25
-    t.string   "hashed_password", limit: 40
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
   create_table "admin_users_pages", id: false, force: true do |t|
@@ -46,12 +46,20 @@ ActiveRecord::Schema.define(version: 20140428105043) do
   create_table "section_edits", force: true do |t|
     t.integer  "admin_user_id"
     t.integer  "section_id"
-    t.string   "summery"
+    t.string   "summary"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "section_edits", ["admin_user_id", "section_id"], name: "index_section_edits_on_admin_user_id_and_section_id", using: :btree
+
+  create_table "section_models", id: false, force: true do |t|
+    t.integer  "admin_user_id"
+    t.integer  "section_models_id"
+    t.string   "summery"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sections", force: true do |t|
     t.integer  "page_id"
